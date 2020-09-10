@@ -1,1 +1,1 @@
-# jussstinpot
+# UCI-Homework-Justin-Pot
