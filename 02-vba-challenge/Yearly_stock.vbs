@@ -9,6 +9,16 @@ For Each ws In Worksheets
     ws.Cells(1, 11).Value = "Percent Change"
     ws.Cells(1, 12).Value = "Total Stock Volume"
 '-------------------------------------------------------------------------------------------
+
+    'Insert Bonus Header Data
+    ws.cells(1,16).value = "Ticker"
+    ws.cells(1,17).value = "Value"
+    ws.cells(2,15).value = "Greatest % Increase"
+    ws.cells(3,15).value = "Greatest % Decrease"
+    ws.cells(4,15).value = "Greatest Total Volume"
+
+'-------------------------------------------------------------------------------------------
+
 'Assigning variables
     Dim i As Long
     Dim ticker As String
@@ -90,18 +100,39 @@ For Each ws In Worksheets
             else
                 total_stock_volume = total_stock_volume + ws.Cells(i, 7).Value
 
-            End If
-            
-'--------------------------------------------------------------------------------------------------------
-                'ADDING Color
+            End If      
 
-                If ws.Cells(i, 10).Value >= 0 Then
-                    ws.Cells(i, 10).Interior.ColorIndex = 4
-                else
-                    ws.Cells(i, 10).Interior.ColorIndex = 3
-                End if
+        next I
 
-        Next i      
+    'Assigning Variables for Bonus Data
+    Dim percent_max as Double
+    percent_max = 0
+
+    Dim percent_min as Double
+    percent_min = 0
+    
+    Dim percent_last_row as Long
+    percent_last_row = ws.Cells(Rows.Count, 11).End(xlUp).Row
+        'Bonus data
+        for i = 2 to percent_last_row
+
+            if percent_max < ws.cells(i,11).value Then
+                percent_max = ws.cells(i,11).value 
+                ws.cells(2,17).value = (str(percent_max * 100) & "%")
+                ws.cells(2,16).value = ws.cells(i,9).value
+            elseif percent_min > ws.cells(i,11).value Then 
+                percent_min = ws.cells(i,11).value 
+                ws.cells(3,17).value = (str(percent_min * 100) & "%")
+                ws.cells(3,16).value = ws.cells(i,9).value
+            end if
+        'ADDING Color
+
+        If ws.Cells(i, 10).Value >= 0 Then
+            ws.Cells(i, 10).Interior.ColorIndex = 4
+        else
+            ws.Cells(i, 10).Interior.ColorIndex = 3
+        End if
+        Next i  
 Next ws
 End Sub
 
