@@ -125,6 +125,21 @@ For Each ws In Worksheets
                 ws.cells(3,17).value = (str(percent_min * 100) & "%")
                 ws.cells(3,16).value = ws.cells(i,9).value
             end if
+        next i
+    Dim high_volume as Double
+    high_volume = 0
+
+    Dim volume_last_row as Long
+    volume_last_row = ws.Cells(Rows.Count, 12).End(xlUp).Row
+        for i = 2 to volume_last_row
+
+            if high_volume < ws.cells(i,12).value Then
+                high_volume = ws.cells(i,12).value
+                ws.cells(4,17).value = high_volume
+                ws.cells(4,16).value = ws.cells(i,9).value
+            end if
+        
+
         'ADDING Color
 
         If ws.Cells(i, 10).Value >= 0 Then
