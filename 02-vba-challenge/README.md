@@ -1,7 +1,7 @@
 # VBA Homework - VBA Challenge
 
 ### Link to VBS Code
-* [VBS Code](02-vba-challenge/Yearly_stock.vbs)
+* [VBS Code](https://github.com/jussstinpot/UCI-Homework-Justin-Pot/blob/master/02-vba-challenge/Yearly_stock.vbs)
 
 ## Attached below are screen shots of VBA homework
 
