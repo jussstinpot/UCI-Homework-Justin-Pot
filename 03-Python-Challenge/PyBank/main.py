@@ -3,11 +3,12 @@ import csv
 
 csvpath = os.path.join("..", "..", "..", 'budget_data.csv')
 
-#Set each variable to 0
+#Give each variable a list 
 total_months = []
 total_net = []
 average_change= []
 
+#Open csv file
 with open(csvpath) as budget:
 
     csvreader=csv.reader(budget, delimiter=',')
@@ -15,17 +16,24 @@ with open(csvpath) as budget:
     #Skip Header for row count
     csv_header = next(csvreader)
     
+    #Read csv file by row
     for row in csv.reader(budget):
       
-      # append the total months and total profit to their corresponding lists
+      #append total months to correct list
       total_months.append(row[0])
+      #append total profit/loss to correct list
       total_net.append(int(row[1]))
-    
+
+    #Calculate average change between the entire period
     for i in range(len(total_net)-1):
+        #Subtract the total changes between two months and assigning it to proper list
         average_change.append(total_net[i+1]-total_net[i])
 
+#Greatest increase in profit
 greatest_increase = max(average_change)
+#Greatest decrease in profit
 greatest_decrease = min(average_change)
+
 
 increase_month = average_change.index(max(average_change)) + 1
 decrease_month = average_change.index(min(average_change)) + 1
