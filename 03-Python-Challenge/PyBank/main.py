@@ -1,14 +1,32 @@
 import os
 import csv
 
-csvpath = os.path.join('Resources', 'budget_data.csv')
+csvpath = os.path.join('Resources', '.gitignore', 'budget_data.csv')
 
-print("Financial Analysis")
-print("-------------------")
+with open(csvpath) as budget:
+    csvreader=csv.reader(budget, delimiter=',')
 
-with open(csvpath) as csvfile:
-    csvreader=csv.reader(csvfile, delimiter=',')
+    #Skip Header for row count
     csv_header = next(csvreader)
+
+    #Total number of months 
     months = len(list(csvreader))
 
-    print(f"Total Months: " + str(months))
+
+
+
+
+
+
+    print("Financial Analysis")
+    print("--------------------------------")
+    print(f"Total Months: ", str(months))
+    print(f"Total: ", "$")
+    print(f"Average Change: ", "$")
+    print(f"Greatest Increase in Profits: ")
+    print(f"Greatest Decrese in Profits: ")
+
+    
+
+
+
