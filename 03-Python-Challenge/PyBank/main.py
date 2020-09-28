@@ -47,4 +47,21 @@ print(f"Greatest Increase in Profits: {total_months[increase_month]} (${(str(gre
 print(f"Greatest Decrese in Profits: {total_months[decrease_month]} (${(str(greatest_decrease))})")
 
 
+#Create summary page
+csvpath = os.path.join('Analysis', 'budget_data_code_summary.txt')
+with open(csvpath, "w") as file:
 
+    file.write("Financial Analysis")
+    file.write("\n")
+    file.write("----------------------")
+    file.write("\n")
+    file.write(f"Total Months: {len(total_months)}")
+    file.write("\n")
+    file.write(f"Total: ${sum(total_net)}")
+    file.write("\n")
+    file.write(f"Average Chnage: {round(sum(average_change)/len(average_change),2)}")
+    file.write("\n")
+    file.write(f"Greatest Increase in Profits: {total_months[increase_month]}(${(str(greatest_increase))})")
+    file.write("\n")
+    file.write(f"Greatest Decrese in Profits: {total_months[decrease_month]}(${(str(greatest_decrease))})")
+    
