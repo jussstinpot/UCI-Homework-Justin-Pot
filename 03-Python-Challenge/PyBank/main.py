@@ -23,7 +23,7 @@ with open(csvpath) as budget:
       total_months.append(row[0])
       #append total profit/loss to correct list
       total_net.append(int(row[1]))
-
+      
     #Calculate average change between the entire period
     for i in range(len(total_net)-1):
         #Subtract the total changes between two months and assigning it to proper list
