@@ -21,7 +21,7 @@ with open(csvpath) as election:
         #Count number of rows in sheet
         total_votes += 1
 
-        #Start counting candidates in row 2
+        #Start counting candi..dates in row 2
         candidate_name = (row[2])
 
         #Add a count to each candidate name whenever a match is found
