@@ -11,6 +11,7 @@
 
 * Players between the age of 20 - 24 have the highest percentage of players 
 * Overall the most observable information in the data set is that the game has more male players vs female and non-disclosed.
+* The item "Final Critic" was the most popular and profitable time for the game.
 
 
 ### Copyright
