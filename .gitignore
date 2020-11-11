@@ -1,4 +1,9 @@
-.DS_Store
+# ignore .csv files
 *.csv
-
+# ignore jupyter notebook checkpoints and pycache
+.ipynb_checkpoints
+__pycache__
+# ignore api_keys
 api_keys.py
+# ignore config
+config.py
