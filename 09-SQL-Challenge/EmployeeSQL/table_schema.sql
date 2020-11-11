@@ -2,7 +2,7 @@
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 
-CREATE TABLE "Departments" (
+CREATE TABLE "departments" (
     "dept_no" Varchar(4)   NOT NULL,
     "dept_name" Varchar(225)   NOT NULL,
     CONSTRAINT "pk_Departments" PRIMARY KEY (
@@ -10,17 +10,17 @@ CREATE TABLE "Departments" (
      )
 );
 
-CREATE TABLE "Department_manager" (
+CREATE TABLE "department_manager" (
     "dept_no" Varchar(4)   NOT NULL,
     "emp_no" INT   NOT NULL
 );
 
-CREATE TABLE "Salaries" (
+CREATE TABLE "salaries" (
     "emp_no" INT   NOT NULL,
     "salary" INT   NOT NULL
 );
 
-CREATE TABLE "Employees" (
+CREATE TABLE "employees" (
     "emp_no" INT   NOT NULL,
     "title_id" Varchar(10)   NOT NULL,
     "birth_date" DATE   NOT NULL,
@@ -33,12 +33,12 @@ CREATE TABLE "Employees" (
      )
 );
 
-CREATE TABLE "Department_emp" (
+CREATE TABLE "department_emp" (
     "emp_no" INT   NOT NULL,
     "dept_no" Varchar(4)   NOT NULL
 );
 
-CREATE TABLE "Titles" (
+CREATE TABLE "titles" (
     "title_id" VARCHAR(10)   NOT NULL,
     "title" VARCHAR(225)   NOT NULL,
     CONSTRAINT "pk_Titles" PRIMARY KEY (
@@ -46,21 +46,21 @@ CREATE TABLE "Titles" (
      )
 );
 
-ALTER TABLE "Department_manager" ADD CONSTRAINT "fk_Department_manager_dept_no" FOREIGN KEY("dept_no")
-REFERENCES "Departments" ("dept_no");
+ALTER TABLE "department_manager" ADD CONSTRAINT "fk_department_manager_dept_no" FOREIGN KEY("dept_no")
+REFERENCES "departments" ("dept_no");
 
-ALTER TABLE "Department_manager" ADD CONSTRAINT "fk_Department_manager_emp_no" FOREIGN KEY("emp_no")
-REFERENCES "Employees" ("emp_no");
+ALTER TABLE "department_manager" ADD CONSTRAINT "fk_department_manager_emp_no" FOREIGN KEY("emp_no")
+REFERENCES "employees" ("emp_no");
 
-ALTER TABLE "Salaries" ADD CONSTRAINT "fk_Salaries_emp_no" FOREIGN KEY("emp_no")
-REFERENCES "Employees" ("emp_no");
+ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
+REFERENCES "employees" ("emp_no");
 
-ALTER TABLE "Employees" ADD CONSTRAINT "fk_Employees_title_id" FOREIGN KEY("title_id")
-REFERENCES "Titles" ("title_id");
+ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_title_id" FOREIGN KEY("title_id")
+REFERENCES "titles" ("title_id");
 
-ALTER TABLE "Department_emp" ADD CONSTRAINT "fk_Department_emp_emp_no" FOREIGN KEY("emp_no")
-REFERENCES "Employees" ("emp_no");
+ALTER TABLE "department_emp" ADD CONSTRAINT "fk_department_emp_emp_no" FOREIGN KEY("emp_no")
+REFERENCES "employees" ("emp_no");
 
-ALTER TABLE "Department_emp" ADD CONSTRAINT "fk_Department_emp_dept_no" FOREIGN KEY("dept_no")
-REFERENCES "Departments" ("dept_no");
+ALTER TABLE "department_emp" ADD CONSTRAINT "fk_department_emp_dept_no" FOREIGN KEY("dept_no")
+REFERENCES "departments" ("dept_no");
 
