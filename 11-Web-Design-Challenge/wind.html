@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+
+        <meta charset="utf-8">
+        <title>Web Design Challenge</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="https://www.twitch.tv/jussstinpot/">
+                <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/7917ba1a-5d40-4a60-a30c-0908ef1acd77-profile_image-300x300.png" width="45" height="45" alt="">
+              </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="data.html">Weather Data</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Comparisons
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="temp.html">Temperature Comparison</a>
+                    <a class="dropdown-item" href="humidity.html">Humidity Comparison</a>
+                    <a class="dropdown-item" href="cloudiness.html">Cloudiness Comparison</a>
+                    <a class="dropdown-item" href="wind.html">Wind Comparison</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="comparison.html">All Comparisons</a>
+                  </div>
+                </li>
+              </ul>
+              <span class="navbar-text">
+                Wind
+              </span>
+            </div>
+          </nav>
+          <div class="container content">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="col-md-12">
+                        <h3>Wind Speed</h3>
+                        <hr>
+                        <img src="Resources/assets/images/Fig4.png" width="100%" alt="wind speed">
+                        <br>
+                        <p>Wind is the movement of air caused by the uneven heating of the Earth by the Sun. Differences in the atmospheric pressure creates winds. This plot was created using 500 cities latitude information around the world. As a result, we can say that there is no trend or relation between latitude and wind speed, as we get closet to the equator. </p>
+                    </div>
+                </div>
+                <!--visualizations container adjustments-->
+                <div class="col-md-4">
+                    <div class="col-md-12">
+                        <h3>Visualizations</h3>
+                        <hr>
+                        <div class="row">
+                            <div class="col-3 col-md-6">
+                                <a href="temp.html"><img src="Resources/assets/images/Fig1.png" width="100%" alt="temprature"></a>
+                            </div>
+                            
+                            <div class="col-3 col-md-6">
+                                <a href="humidity.html"><img src="Resources/assets/images/Fig2.png" width="100%" alt="humidity"></a>
+                            </div>
+                            
+                            <div class="col-3 col-md-6">
+                                <a href="cloudiness.html"><img src="Resources/assets/images/Fig3.png" width="100%" alt="cloudiness"></a>
+                            </div>
+                            
+                            <div class="col-3 col-md-6">
+                                <a href="wind.html"><img class="pic" src="Resources/assets/images/Fig4.png" width="100%" alt="windspeed"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </div>    
+        </div>
+
+    </body>
+</html>
